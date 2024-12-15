@@ -114,7 +114,15 @@ nav a:hover {
     .skills-list ul {
         display: block;
     }
+
     #container {
         width: 100%;
     }
+}
+
+
+.photo_image {
+    float: left;
+    max-width: 300px;
+    margin-bottom: 35px;
 }
