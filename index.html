@@ -15,13 +15,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">Евтефеев Никита - Фрилансер-разработчик</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <script src="show_info.js"></script>
+
     <script src="translate.js"></script>
 </head>
 
 <body>
     <div id="container">
         <header>
-            <img src="logo.png" alt="Логотип">
+            <img src="logo.png" width="auto" height="100px" alt="Логотип">
         </header>
         <nav>
             <a id="about_link" href="#about">Обо мне</a>
@@ -32,13 +35,11 @@
                 <a class="translate" onclick="translate_site('en')" href="#en">EN</a>
                 <a class="translate" onclick="translate_site('uk')" href="#UA">UK</a>
             </div>
-
-
         </nav>
         <div class="container">
             <div id="about" class="section">
                 <h2 id="about_title">Обо мне</h2>
-                <img class="photo_image" src="photo.png" alt="Photo">
+                <img class="photo_image" src="photo.png" height="auto" width="auto" alt="Photo">
                 <div>
                     <p id="about_text1">Привет! Меня зовут Никита Евтефеев, и я профессиональный веб-разработчик с
                         глубоким
@@ -68,63 +69,79 @@
                 </div>
 
             </div>
-            <div id="projects" class="section">
-                <h2 id="projects_title">Проекты</h2>
-                <ul id="projects_text">
-                    <li>Бекенд для телеграм игры</li>
-                    <li>Трекер для сбора крипто-токенов</li>
-                    <li>Автоматизация онлайн игр</li>
-                    <li>Прототип 3D сцены С++ OpenGL</li>
-                    <li>Плагин-парсер для интернет магазина</li>
-                    <li>Фронтенд-график для отслеживания процессов бурения</li>
-                    <li>Прототип приложения для бронирования билетов JAVA</li>
-                    <li>Графический интерфейс на С++ QTCreator</li>
-                    <li>Телеграм бот для покупки онлайн-курсов</li>
-                    <li>Телеграм бот для прогноза погоды</li>
-                    <li>Обучение нейросетей на Tensorflow</li>
-                    <li>Доработка функционала DJANGO</li>
-                    <li>Скрипт для обработки платежей</li>
-                    <li>Автоматизация работы с хостингом</li>
-                    <li>Восстановление сайта из веб-архива</li>
-                    <li>Верстка HTML</li>
-                </ul>
+            <div id="contact" class="section">
+                <h2 id="contacts_title">Контакты</h2>
+                <div class="contacts">
+                    <p><a href="mailto:nikita.evtefeev@gmail.com" style="color: #4CAF50;">Gmail.com</a>
+                    </p>
+                    <p><a href="https://t.me/Evtefeev" style="color: #4CAF50;">Telegram</a></p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/evtefeev/" style="color: #4CAF50;">LinkedIn</a>
+                    </p>
+
+                    <p><a href="https://github.com/Evtefeev" style="color: #4CAF50;">GitHub</a></p>
+                </div>
+
             </div>
             <div id="skills" class="section">
                 <h2 id="skills_title">Навыки</h2>
                 <div class="skills-list">
                     <ul>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Python</li>
-                        <li>Flask</li>
-                        <li>Django</li>
-                        <li>MySQL</li>
-                        <li>GIT</li>
-                        <li>Linux</li>
-                        <li>Docker</li>
-                        <li>HTML/CSS</li>
-                        <li>PHP</li>
-                        <li>C++</li>
+                        <li>
+                            Python, C++, JavaScript, SQL, PHP
+                        </li>
+                        <li>
+                            HTML, CSS, JavaScript, PHP, REST API
+                        </li>
+                        <li>
+                            Flask, Django, Bootstrap,
+                            NumPy, Pandas
+                        </li>
+                        <li>
+                            MySQL, PostgreSQL, SQL
+                        </li>
+                        <li>
+                            Git, Docker, Linux, Bash
+                        </li>
+                        <li>
+                            Telethon, Aiogram
+                        </li>
+                        <li>
+                            PyAutoGUI, Selenium, Beautiful-soup, Requests
+                        </li>
+
+                        <li>Tensorflow, Sklearn</li>
+                        <li>Tkinter, QTCreator, Python-eel</li>
                     </ul>
                 </div>
+
             </div>
-            <div id="contact" class="section">
-                <h2 id="contacts_title">Контакты</h2>
-                <p>Email: <a href="mailto:nikita.evtefeev@gmail.com"
-                        style="color: #4CAF50;">nikita.evtefeev@gmail.com</a>
-                </p>
-                <p>Telegram: <a href="https://t.me/Evtefeev" style="color: #4CAF50;">t.me/Evtefeev</a></p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/evtefeev/" style="color: #4CAF50;">LinkedIn</a>
-                    <a href="https://github.com/Evtefeev" style="color: #4CAF50;">GitHub</a>
-                </div>
+            <div id="projects" class="section">
+                <h2 id="projects_title">Проекты</h2>
+                <ul id="projects_text">
+                    <li class="project-link" id="game-backend">Бекенд для телеграм игры</li>
+                    <li class="project-link">Трекер для сбора крипто-токенов</li>
+                    <li class="project-link">Автоматизация онлайн игр</li>
+                    <li class="project-link">Прототип 3D сцены С++ OpenGL</li>
+                    <li class="project-link">Плагин-парсер для интернет магазина</li>
+                    <li class="project-link">Фронтенд-график для отслеживания процессов бурения</li>
+                    <li class="project-link">Прототип приложения для бронирования билетов JAVA</li>
+                    <li class="project-link">Графический интерфейс на С++ QTCreator</li>
+                    <li class="project-link">Телеграм бот для покупки онлайн-курсов</li>
+                    <li class="project-link">Телеграм бот для прогноза погоды</li>
+                    <li class="project-link">Обучение нейросетей на Tensorflow</li>
+                    <li class="project-link">Доработка функционала DJANGO</li>
+                    <li class="project-link">Скрипт для обработки платежей</li>
+                    <li class="project-link">Автоматизация работы с хостингом</li>
+                    <li class="project-link">Восстановление сайта из веб-архива</li>
+                    <li class="project-link">Верстка HTML</li>
+                </ul>
             </div>
         </div>
         <footer class="footer">
             <p id="footer">&copy; 2024 Никита Евтефеев. Все права защищены.</p>
         </footer>
     </div>
-
 </body>
 
 </html>

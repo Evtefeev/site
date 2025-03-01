@@ -4,7 +4,8 @@ function translate_site(set_lang) {
     fetch('./translate.json')
         .then(response => response.json())
         .then(data => {
-            const lang = set_lang ? set_lang : document.documentElement.lang || 'ru';
+            const lang = set_lang ? set_lang : document.documentElement.lang || 'en';
+            localStorage.setItem("content-lang", lang)
             const translations = data[lang];
 
             document.getElementById('title').innerText = translations['title'];
@@ -20,9 +21,12 @@ function translate_site(set_lang) {
 
             document.getElementById('projects_title').innerText = translations['projects'];
             let projects_text = "";
+            // document.getElementById('projects_text').innerHTML = "";
+            n = 0;
             translations['projects_text'].forEach(
                 (project) => {
-                    projects_text += "<li>" + project + "</li>"
+                    projects_text += "<li onclick='showProjectInfo(" + n + ")'>" + project + "</li>";
+                    n++;
                 }
             )
             document.getElementById('projects_text').innerHTML = projects_text;
@@ -30,6 +34,7 @@ function translate_site(set_lang) {
 
             document.getElementById('contacts_title').innerText = translations['contact'];
             document.getElementById('footer').innerHTML = translations['footer'];
+
         })
         .catch(error => console.error('Error loading translations:', error));
 }
